@@ -6,6 +6,7 @@ import DesignTypes from '../components/DesignTypes'
 import HomeTopInfo from '../components/HomeTopInfo'
 import Adjectives from '../components/Adjectives'
 import CallToAction from '../components/CallToAction'
+import Footer from '../components/Footer'
 
 const Container = styled.main`
   min-height: 100vh;
@@ -28,6 +29,8 @@ export default function Home() {
         <Adjectives />
         <CallToAction />
       </Container>
+
+      <Footer />
     </div>
   )
 }

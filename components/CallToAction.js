@@ -5,11 +5,14 @@ const Container = styled.div`
   border-radius: 20px;
   background-color: #E7816B;
   background-image: url('/assets/shared/desktop/bg-pattern-three-circles.svg');
-  padding: 40px 70px;
+  padding: 60px 80px;
   color: #FFFFFF;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 90px;
+  margin-bottom: -70px;
+  position: relative;
 `
 
 const Left = styled.div`
