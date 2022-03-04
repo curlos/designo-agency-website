@@ -6,7 +6,9 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url('/assets/home/desktop/image-web-design-small.jpg');
+  background-image:
+    linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('/assets/home/desktop/image-web-design-small.jpg');
   background-size: cover;
   border-radius: 10px;
   cursor: pointer;
