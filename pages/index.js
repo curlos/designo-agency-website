@@ -2,6 +2,9 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styled from 'styled-components'
 import Navbar from '../components/Navbar'
+import DesignTypes from '../components/DesignTypes'
+import HomeTopInfo from '../components/HomeTopInfo'
+import Adjectives from '../components/Adjectives'
 
 const Container = styled.main`
   min-height: 100vh;
@@ -19,6 +22,9 @@ export default function Home() {
     
       <Container>
         <Navbar />
+        <HomeTopInfo />
+        <DesignTypes />
+        <Adjectives />
       </Container>
     </div>
   )
