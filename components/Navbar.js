@@ -14,7 +14,7 @@ const Left = styled.div`
 
   img {
     height: 24px;
-  }
+  };
 `
 
 const Right = styled.div`
