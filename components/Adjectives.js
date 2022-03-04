@@ -30,7 +30,7 @@ const Adjectives = () => {
 
   return (
     <Container>
-      {adjectives.map((adjective) => <Adjective adjective={adjective} />)}
+      {adjectives.map((adjective) => <Adjective key={adjective.title} adjective={adjective} />)}
     </Container>
   )
 }

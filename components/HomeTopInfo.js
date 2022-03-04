@@ -36,7 +36,7 @@ const Left = styled.div`
 
   h2 {
     font-size: 48px;
-    font-weight: medium;
+    font-weight: 500;
   };
 
   p {

@@ -5,10 +5,11 @@ import Navbar from '../components/Navbar'
 import DesignTypes from '../components/DesignTypes'
 import HomeTopInfo from '../components/HomeTopInfo'
 import Adjectives from '../components/Adjectives'
+import CallToAction from '../components/CallToAction'
 
 const Container = styled.main`
   min-height: 100vh;
-  padding: 20px 30px;
+  padding: 20px 70px;
 `
 
 export default function Home() {
@@ -25,6 +26,7 @@ export default function Home() {
         <HomeTopInfo />
         <DesignTypes />
         <Adjectives />
+        <CallToAction />
       </Container>
     </div>
   )
