@@ -1,12 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Container = styled.div`
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-`
-
 const DesignImg = styled.img`
   content:url('/assets/${props => props.designType}/desktop/${props => props.imageFilename}.jpg');
   width: 100%;
@@ -17,7 +11,7 @@ const DesignImg = styled.img`
 
 const DesignInfo = styled.div`
   flex: 1;
-  padding: 20px;
+  padding: 30px;
   text-align: center;
   background-color: #FDF3F0;
   border-bottom-left-radius: 20px;
@@ -34,6 +28,24 @@ const DesignInfo = styled.div`
 
   p {
     color: #333136;
+  }
+`
+
+const Container = styled.div`
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+
+  &:active {
+    ${DesignInfo} {
+      background-color: #E7816B;
+      color: #FFFFFF;
+
+      h3, p {
+        color: #FFFFFF;
+      }
+    }
   }
 `
 
