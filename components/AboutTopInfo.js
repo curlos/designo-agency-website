@@ -5,6 +5,7 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: 3fr 2fr;
   border: none;
+  margin-bottom: 90px;
 `
 
 const Left = styled.div`

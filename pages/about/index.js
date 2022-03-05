@@ -3,6 +3,7 @@ import Image from 'next/image'
 import styled from 'styled-components'
 import Navbar from '../../components/Navbar'
 import AboutTopInfo from '../../components/AboutTopInfo'
+import AboutRealDeal from '../../components/AboutRealDeal'
 import CallToAction from '../../components/CallToAction'
 import Footer from '../../components/Footer'
 import AboutTalent from '../../components/AboutTalent'
@@ -25,6 +26,7 @@ export default function Home() {
         <Navbar />
         <AboutTopInfo />
         <AboutTalent />
+        <AboutRealDeal />
         
         <CallToAction />
       </Container>

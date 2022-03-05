@@ -5,6 +5,7 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: 3fr 4fr;
   border: none;
+  margin-bottom: 90px;
 `
 
 const Left = styled.img`
@@ -22,7 +23,7 @@ const Right = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #E7816B;
+  background-color: #FDF3F0;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   padding: 90px;
@@ -32,7 +33,9 @@ const Right = styled.div`
 const RightWrapper = styled.div`
   height: 100%;
   h2 {
-    font-size: 48px;
+    color: #E7816B;
+    font-size: 40px;
+    line-height: 48px;
     font-weight: 500;
   }
 
@@ -40,6 +43,7 @@ const RightWrapper = styled.div`
     font-size: 16px;
     font-weight: 400;
     line-height: 26px;
+    color: #333136;
   }
 `
 
