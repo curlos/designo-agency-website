@@ -31,7 +31,7 @@ const AboutCountries = () => {
   return (
     <Container>
       {countries.map((country, index) => (
-        <AboutCountry index={index} country={country} />
+        <AboutCountry key={country.name + index} index={index} country={country} />
       ))}
 
     </Container>

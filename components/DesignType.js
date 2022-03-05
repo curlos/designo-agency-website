@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -14,6 +15,12 @@ const Container = styled.div`
   background-size: cover;
   border-radius: 10px;
   cursor: pointer;
+
+  &:hover, &:active {
+    background-image:
+      linear-gradient(0deg, rgba(231,129,107, 0.6), rgba(231,129,107, 0.6)),
+      url('${props => props.bgImage}');
+  }
   
   h2 {
     font-size: 40px;
@@ -74,16 +81,20 @@ const DesignType = ({ type }) => {
     }
   }
 
+  const { name, bgImage, routerLink } = getDesignTypeInfo(type)
+
   return (
-    <Container bgImage={getDesignTypeInfo(type).bgImage}>
-      <InnerContainer>
-        <h2>{getDesignTypeInfo(type).name}</h2>
-        <button>
-          VIEW PROJECTS
-          <img src="/assets/shared/desktop/icon-right-arrow.svg" alt="" />
-        </button>
-      </InnerContainer>
-    </Container>
+    <Link href={`${routerLink}`} passHref>
+      <Container bgImage={bgImage}>
+        <InnerContainer>
+          <h2>{name}</h2>
+          <button>
+            VIEW PROJECTS
+            <img src="/assets/shared/desktop/icon-right-arrow.svg" alt="" />
+          </button>
+        </InnerContainer>
+      </Container>
+    </Link>
   )
 }
 

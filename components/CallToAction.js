@@ -45,6 +45,12 @@ const WhiteButton = styled.button`
   padding: 20px 25px;
   border-radius: 10px;
   letter-spacing: 1px;
+  cursor: pointer;
+
+  &:active {
+    background-color: #FFAD9B;
+    color: #FFFFFF;
+  }
 `
 
 const CallToAction = () => {

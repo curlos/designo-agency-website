@@ -14,7 +14,7 @@ const DesignCards = ({ designType, designs }) => {
   return (
     <Container>
       {designs.map((design) => (
-        <DesignCard designType={designType} design={design} />
+        <DesignCard key={design} designType={designType} design={design} />
       ))}
     </Container>
   )

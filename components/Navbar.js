@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -12,6 +13,7 @@ const Container = styled.div`
 const Left = styled.div`
   display: flex;
   gap: 10px;
+  cursor: pointer;
 
   img {
     height: 24px;
@@ -23,10 +25,19 @@ const Right = styled.div`
   align-items: center;
   gap: 35px;
   
-  h4 {
+  a {
     font-weight: normal;
     font-size: 14px;
     letter-spacing: 2px;
+    cursor: pointer;
+
+    &:hover, &:active {
+      text-decoration: underline;
+    }
+
+    &:active {
+      text-decoration-color: 
+    }
   }
 `
 
@@ -34,13 +45,15 @@ const Navbar = () => {
   return (
     <Container>
       <Left>
-        <img src="/assets/shared/desktop/logo-dark.png" alt=""  />
+        <Link href="/" passHref>
+          <img src="/assets/shared/desktop/logo-dark.png" alt=""  />
+        </Link>
       </Left>
 
       <Right>
-        <h4>OUR COMPANY</h4>
-        <h4>LOCATIONS</h4>
-        <h4>CONTACT</h4>
+        <Link href="/about" passHref>OUR COMPANY</Link>
+        <Link href="/locations" passHref>LOCATIONS</Link>
+        <Link href="/contact" passHref>CONTACT</Link>
       </Right>
     </Container>
   )

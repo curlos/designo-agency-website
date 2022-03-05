@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -24,11 +25,16 @@ const TopRight = styled.div`
   align-items: center;
   gap: 30px;
 
-  h4 {
+  a {
     font-size: 14px;
     font-weight: 400;
     letter-spacing: 2px;
     color: #FFFFFF;
+
+    &:hover {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+    }
   }
 `
 
@@ -54,6 +60,14 @@ const SocialMedia = styled.div`
   color: #E7816B;
   display: flex;
   gap: 20px;
+
+  img {
+    cursor: pointer;
+
+    &:active {
+      filter: brightness(120%);
+    }
+  }
 `
 
 const Footer = () => {
@@ -68,9 +82,9 @@ const Footer = () => {
         </div>
 
         <TopRight>
-          <h4>OUR COMPANY</h4>
-          <h4>LOCATIONS</h4>
-          <h4>CONTACT</h4>
+          <Link href="/about" passHref>OUR COMPANY</Link>
+          <Link href="/locations" passHref>LOCATIONS</Link>
+          <Link href="/contact" passHref>CONTACT</Link>
         </TopRight>
       </TopBar>
 

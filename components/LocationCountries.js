@@ -6,6 +6,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  margin-bottom: 130px;
 `
 
 const LocationCountries = () => {
@@ -54,7 +55,7 @@ const LocationCountries = () => {
   return (
     <Container>
       {COUNTRIES.map((country, index) => (
-        <LocationCountry index={index} country={country} />
+        <LocationCountry key={country.name + index} index={index} country={country} />
       ))}
     </Container>
   )
