@@ -5,6 +5,7 @@ import Navbar from '../../components/Navbar'
 import AboutTopInfo from '../../components/AboutTopInfo'
 import CallToAction from '../../components/CallToAction'
 import Footer from '../../components/Footer'
+import AboutTalent from '../../components/AboutTalent'
 
 const Container = styled.main`
   min-height: 100vh;
@@ -23,6 +24,8 @@ export default function Home() {
       <Container>
         <Navbar />
         <AboutTopInfo />
+        <AboutTalent />
+        
         <CallToAction />
       </Container>
 
