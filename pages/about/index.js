@@ -7,6 +7,7 @@ import AboutRealDeal from '../../components/AboutRealDeal'
 import CallToAction from '../../components/CallToAction'
 import Footer from '../../components/Footer'
 import AboutTalent from '../../components/AboutTalent'
+import AboutCountries from '../../components/AboutCountries'
 
 const Container = styled.main`
   min-height: 100vh;
@@ -26,6 +27,7 @@ export default function Home() {
         <Navbar />
         <AboutTopInfo />
         <AboutTalent />
+        <AboutCountries />
         <AboutRealDeal />
         
         <CallToAction />
