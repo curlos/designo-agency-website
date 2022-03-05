@@ -33,8 +33,8 @@ const AboutCountries = () => {
 
   return (
     <Container>
-      {countries.map((country) => (
-        <AboutCountry country={country} />
+      {countries.map((country, index) => (
+        <AboutCountry index={index} country={country} />
       ))}
 
     </Container>

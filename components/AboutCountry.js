@@ -14,6 +14,17 @@ const Container = styled.div`
     letter-spacing: 5px;
     text-transform: capitalize
   }
+` 
+
+const ImageWrapper = styled.div`
+  background-image: url('/assets/shared/desktop/bg-pattern-small-circle.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: ${props => props.degrees === 'none' ? 'none' : `rotate(${props.degrees}deg)`};
+
+  img {
+    transform: ${props => props.degrees === 'none' ? 'none' : `rotate(${-1 * props.degrees}deg)`};
+  }
 `
 
 const SeeLocation = styled.button`
@@ -28,12 +39,15 @@ const SeeLocation = styled.button`
   cursor: pointer;
 `
 
-const AboutCountry = ({ country }) => {
-  // /assets/shared/desktop/illustration-canada.svg
+const AboutCountry = ({ index, country }) => {
+
+  const degrees = ['90', '45', '-90']
 
   return (
     <Container>
-      <img src={`/assets/shared/desktop/${country.image}.svg`} alt={country.name} />
+      <ImageWrapper degrees={degrees[index]}>
+        <img src={`/assets/shared/desktop/${country.image}.svg`} alt={country.name} />
+      </ImageWrapper>
       <p>{country.name.toUpperCase()}</p>
       <Link href="/" passHref>
         <SeeLocation>SEE LOCATION</SeeLocation>
