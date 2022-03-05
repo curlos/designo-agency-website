@@ -9,12 +9,12 @@ const Container = styled.div`
   margin-bottom: 90px;
 `
 
-const DesignCards = ({ designs }) => {
+const DesignCards = ({ designType, designs }) => {
 
   return (
     <Container>
       {designs.map((design) => (
-        <DesignCard design={design} />
+        <DesignCard designType={designType} design={design} />
       ))}
     </Container>
   )

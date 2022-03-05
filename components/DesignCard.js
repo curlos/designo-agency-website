@@ -8,7 +8,7 @@ const Container = styled.div`
 `
 
 const DesignImg = styled.img`
-  content:url('/assets/web-design/desktop/image-${props => props.title.toUpperCase()}.jpg');
+  content:url('/assets/${props => props.designType}/desktop/image-${props => props.title.toUpperCase()}.jpg');
   width: 100%;
   object-fit: cover;
   border-top-left-radius: 20px;
@@ -39,10 +39,10 @@ const DesignInfo = styled.div`
 
 
 
-const DesignCard = ({ design }) => {
+const DesignCard = ({ designType, design }) => {
   return (
     <Container>
-      <DesignImg title={design.title.toLowerCase()} />
+      <DesignImg designType={designType} title={design.title.toLowerCase()} />
       <DesignInfo>
         <h3>{design.title}</h3>
         <p>{design.description}</p>

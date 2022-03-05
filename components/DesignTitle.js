@@ -29,12 +29,34 @@ const Wrapper = styled.div`
   }
 `
 
-const DesignTitle = () => {
+const DesignTitle = ({ type }) => {
+  const getInfo = () => {
+    switch(type) {
+      case 'app-design':
+        return {
+          title: 'App Design',
+          description: 'Our mobile designs bring intuitive digital solutions to your customers right at their fingertips.'
+        }
+      case 'graphic-design':
+        return {
+          title: 'Graphic Design',
+          description: 'We deliver eye-catching branding materials that are tailored to meet your business objectives.'
+        }
+      default:
+        return {
+          title: 'Web Design',
+          description: 'We build websites that serve as powerful marketing tools and bring memorable brand experiences.'
+        }
+    }
+  }
+
+  const { title, description } = getInfo()
+
   return (
     <Container>
       <Wrapper>
-        <h2>Web Design</h2>
-        <p>We build websites that serve as powerful marketing tools and bring memorable brand experiences.</p>
+        <h2>{title}</h2>
+        <p>{description}</p>
       </Wrapper>
     </Container>
   )
