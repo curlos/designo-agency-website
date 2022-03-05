@@ -10,7 +10,7 @@ const Container = styled.div`
   gap: 20px;
   background-image:
     linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url('/assets/home/desktop/image-web-design-small.jpg');
+    url('${props => props.bgImage}');
   background-size: cover;
   border-radius: 10px;
   cursor: pointer;
@@ -56,13 +56,13 @@ const DesignType = ({ type }) => {
       case 'APP DESIGN':
         return {
           name: 'APP DESIGN',
-          bgImage: '/assets/home/desktop/image-app-design-small.jpg',
+          bgImage: '/assets/home/desktop/image-app-design.jpg',
           routerLink: '/app-design'
         }
       case 'GRAPHIC DESIGN':
         return {
           name: 'GRAPHIC DESIGN',
-          bgImage: '/assets/home/desktop/image-graphic-design-small.jpg',
+          bgImage: '/assets/home/desktop/image-graphic-design.jpg',
           routerLink: '/graphic-design'
         }
       default:

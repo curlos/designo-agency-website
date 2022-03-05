@@ -3,28 +3,33 @@ import styled from 'styled-components'
 
 const Container = styled.div`
   border-radius: 20px;
-  display: grid;
-  grid-template-rows: 2fr;
+  display: flex;
+  flex-direction: column;
 `
 
 const DesignImg = styled.img`
-  content:url('/assets/web-design/desktop/image-express.jpg');
+  content:url('/assets/web-design/desktop/image-${props => props.title.toUpperCase()}.jpg');
   width: 100%;
+  object-fit: cover;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 `
 
 const DesignInfo = styled.div`
+  flex: 1;
   padding: 20px;
   text-align: center;
   background-color: #FDF3F0;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+  line-height: 26px;
 
   h3 {
     font-weight: 500;
     font-size: 20px;
     color: #E7816B;
+    letter-spacing: 5px;
+    text-transform: uppercase;
   }
 
   p {

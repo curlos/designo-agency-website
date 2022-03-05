@@ -5,10 +5,20 @@ import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import DesignTitle from '../../components/DesignTitle'
 import DesignCards from '../../components/DesignCards'
+import DesignType from '../../components/DesignType'
+import CallToAction from '../../components/CallToAction'
 
 const Container = styled.main`
   min-height: 100vh;
   padding: 20px 70px;
+`
+
+const DesignTypes = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  height: 300px;
+  margin-bottom: 90px;
 `
 
 export default function Home() {
@@ -19,20 +29,24 @@ export default function Home() {
       description: 'A multi-carrier shipping website for ecommerce businesses'
     },
     {
-      title: 'Express',
-      description: 'A multi-carrier shipping website for ecommerce businesses'
+      title: 'Transfer',
+      description: 'Site for low-cost money transfers and sending money within seconds'
     },
     {
-      title: 'Express',
-      description: 'A multi-carrier shipping website for ecommerce businesses'
+      title: 'Photon',
+      description: 'A state-of-the-art music player with high-resolution audio and DSP effects'
     },
     {
-      title: 'Express',
-      description: 'A multi-carrier shipping website for ecommerce businesses'
+      title: 'Builder',
+      description: 'Connects users with local contractors based on their location'
     },
     {
-      title: 'Express',
-      description: 'A multi-carrier shipping website for ecommerce businesses'
+      title: 'Blogr',
+      description: 'Blogr is a platform for creating an online blog or publication'
+    },
+    {
+      title: 'Camp',
+      description: 'Get expert training in coding, data, design, and digital marketing'
     },
   ]
 
@@ -48,6 +62,13 @@ export default function Home() {
         <Navbar />
         <DesignTitle />
         <DesignCards designs={WEB_DESIGNS} />
+        
+        <DesignTypes>
+          <DesignType type="APP DESIGN" />
+          <DesignType type="GRAPHIC DESIGN" />
+        </DesignTypes>
+
+        <CallToAction />
       </Container>
 
       <Footer />
