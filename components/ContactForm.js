@@ -9,6 +9,7 @@ const Container = styled.div`
   background-color: #E7816B;
   border-radius: 20px;
   color: #FFFFFF;
+  margin-bottom: 130px;
 `
 
 const Left = styled.div`

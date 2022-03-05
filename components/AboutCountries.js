@@ -10,9 +10,6 @@ const Container = styled.div`
 `
 
 const AboutCountries = () => {
-
-  // /assets/shared/desktop/illustration-canada.svg
-
   const countries = [
     {
       name: 'Canada',
