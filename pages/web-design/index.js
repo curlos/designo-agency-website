@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import DesignTitle from '../../components/DesignTitle'
+import DesignCards from '../../components/DesignCards'
 
 const Container = styled.main`
   min-height: 100vh;
@@ -46,7 +47,7 @@ export default function Home() {
       <Container>
         <Navbar />
         <DesignTitle />
-        
+        <DesignCards designs={WEB_DESIGNS} />
       </Container>
 
       <Footer />
