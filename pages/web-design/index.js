@@ -26,27 +26,33 @@ export default function Home() {
   const WEB_DESIGNS = [
     {
       title: 'Express',
-      description: 'A multi-carrier shipping website for ecommerce businesses'
+      description: 'A multi-carrier shipping website for ecommerce businesses',
+      imageFilename: 'image-express'
     },
     {
       title: 'Transfer',
-      description: 'Site for low-cost money transfers and sending money within seconds'
+      description: 'Site for low-cost money transfers and sending money within seconds',imageFilename: 'image-express',
+      imageFilename: 'image-transfer'
     },
     {
       title: 'Photon',
-      description: 'A state-of-the-art music player with high-resolution audio and DSP effects'
+      description: 'A state-of-the-art music player with high-resolution audio and DSP effects',
+      imageFilename: 'image-photon'
     },
     {
       title: 'Builder',
-      description: 'Connects users with local contractors based on their location'
+      description: 'Connects users with local contractors based on their location',
+      imageFilename: 'image-builder'
     },
     {
       title: 'Blogr',
-      description: 'Blogr is a platform for creating an online blog or publication'
+      description: 'Blogr is a platform for creating an online blog or publication',
+      imageFilename: 'image-blogr'
     },
     {
       title: 'Camp',
-      description: 'Get expert training in coding, data, design, and digital marketing'
+      description: 'Get expert training in coding, data, design, and digital marketing',
+      imageFilename: 'image-camp'
     },
   ]
 
