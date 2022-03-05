@@ -1,4 +1,12 @@
 import React from 'react'
+import styled from 'styled-components'
+import LocationCountry from './LocationCountry'
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`
 
 const LocationCountries = () => {
   const COUNTRIES = [
@@ -44,9 +52,11 @@ const LocationCountries = () => {
   ]
 
   return (
-    <div>
-      
-    </div>
+    <Container>
+      {COUNTRIES.map((country, index) => (
+        <LocationCountry index={index} country={country} />
+      ))}
+    </Container>
   )
 }
 
