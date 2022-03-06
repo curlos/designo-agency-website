@@ -1,12 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
 import LocationCountry from './LocationCountry'
+import { devices } from '../styles/media_queries'
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
   margin-bottom: 130px;
+
+  @media ${devices.tablet} {
+    gap: 90px;
+  };
 `
 
 const LocationCountries = () => {

@@ -1,10 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
+import { devices } from '../styles/media_queries'
 
 const Container = styled.div`
   display: grid;
   grid-template-columns: ${props => Number(props.index) % 2 === 0 ? '2fr 1fr' : '1fr 2fr'};
   gap: 20px;
+
+  @media ${devices.tablet} {
+    grid-template-columns: none;
+    grid-template-rows: 1fr 1fr;
+    gap: 30px;
+  };
 `
 
 const CountryInfo = styled.div`
@@ -20,6 +27,10 @@ const CountryInfo = styled.div`
     font-size: 40px;
     color: #E7816B;
   }
+
+  @media ${devices.tablet} {
+    padding: 60px;
+  };
 `
 
 const MapImage = styled.div`
@@ -28,6 +39,10 @@ const MapImage = styled.div`
   width: 100%;
   background-image: url('/assets/locations/desktop/${props => props.image}');
   background-size: cover;
+  
+  @media ${devices.tablet} {
+    order: -1;
+  };
 `
 
 const AddressContact = styled.div`

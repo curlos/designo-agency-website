@@ -49,6 +49,8 @@ const InfoWrapper = styled.div`
 
 const ImageWrapper = styled.img`
   background-image: url('/assets/about/desktop/image-about-hero.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 100%;
   width: 100%;
   border-top-right-radius: 20px;

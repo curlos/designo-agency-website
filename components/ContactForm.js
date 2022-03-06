@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { devices } from '../styles/media_queries'
 
 const Container = styled.div`
   display: grid;
@@ -10,9 +11,16 @@ const Container = styled.div`
   border-radius: 20px;
   color: #FFFFFF;
   margin-bottom: 130px;
+
+  @media ${devices.tablet} {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 60px 50px;
+  };
 `
 
-const Left = styled.div`
+const ContactAbout = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -69,13 +77,14 @@ const InputWrapper = styled.div`
 
 const EmptyError = styled.div`
   display: flex;
+  justify-content: flex-end;
   align-items: center;
   gap: 10px;
   font-size: 12px;
   font-style: italic;
 `
 
-const Right = styled.form`
+const Inputs = styled.form`
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -137,12 +146,12 @@ const ContactForm = () => {
 
   return (
     <Container>
-      <Left>
+      <ContactAbout>
         <h1>Contact Us</h1>
         <p>Ready to take it to the next level? Let’s talk about your project or idea and find out how we can help your business grow. If you are looking for unique digital experiences that’s relatable to your users, drop us a line.</p>
-      </Left>
+      </ContactAbout>
 
-      <Right>
+      <Inputs>
         {INPUTS.map((inputInfo) => (
           <InputWrapper>
             <Input type={inputInfo.text} placeholder={inputInfo.placeholder} empty={inputInfo.value.length < 1} value={inputInfo.value} onChange={(e) => inputInfo.change(e.target.value)}></Input>
@@ -165,7 +174,7 @@ const ContactForm = () => {
         <ButtonWrapper>
           <WhiteButton>SUBMIT</WhiteButton>
         </ButtonWrapper>
-      </Right>
+      </Inputs>
     </Container>
   )
 }
