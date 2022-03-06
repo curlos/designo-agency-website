@@ -12,18 +12,35 @@ const Container = styled.div`
     padding: 40px;
     padding-top: 70px;
   };
+
+  @media ${devices.mobile} {
+    padding: 70px 25px;
+  };
+`
+
+const ImageWrapper = styled.div`
+  @media ${devices.mobile} {
+    border-bottom: 1px solid rgba(151, 151, 151, 0.1);
+    text-align: center;
+    padding-bottom: 20px;
+  };
 `
 
 const TopBar = styled.div`
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  gap: 30px;
   padding: 35px 0;
   border-bottom: 1px solid rgba(151, 151, 151, 0.1);
 
   img {
     height: 24px;
-  }
+  };
+
+  @media ${devices.mobile} {
+    border-bottom: none;
+    flex-direction: column;
+  };
 `
 
 const TopRight = styled.div`
@@ -42,6 +59,10 @@ const TopRight = styled.div`
       text-decoration-thickness: 1px;
     }
   };
+
+  @media ${devices.mobile} {
+    flex-direction: column;
+  };
 `
 
 const BottomBar = styled.div`
@@ -51,6 +72,12 @@ const BottomBar = styled.div`
   align-items: center;
   gap: 20px;
   color: rgba(255, 255, 255, 0.5);
+
+  @media ${devices.mobile} {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  };
 `
 
 const Address = styled.div`
@@ -82,9 +109,9 @@ const Footer = () => {
   return (
     <Container>
       <TopBar>
-        <div>
+        <ImageWrapper>
           <img src="/assets/shared/desktop/logo-light.png" alt=""  />
-        </div>
+        </ImageWrapper>
 
         <TopRight>
           <Link href="/about" passHref>OUR COMPANY</Link>

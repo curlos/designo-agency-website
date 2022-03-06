@@ -21,6 +21,10 @@ const Container = styled.div`
     text-align: center;
     gap: 20px;
   };
+
+  @media ${devices.mobile} {
+    padding: 60px 20px;
+  };
 `
 
 const Left = styled.div`
@@ -37,7 +41,17 @@ const Left = styled.div`
     font-size: 16px;
     font-weight: 400;
     line-height: 26px;
-  }
+  };
+
+  @media ${devices.mobile} {
+    h2 {
+      font-size: 32px;
+    };
+
+    p {
+      font-size: 15px;
+    };
+  };
 `
 
 const Right = styled.div`

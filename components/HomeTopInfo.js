@@ -4,10 +4,12 @@ import { devices } from '../styles/media_queries'
 
 const Container = styled.div`
   color: #FFFFFF;
+  background-color: #E7816B;
   background-image: url('/assets/home/desktop/bg-pattern-hero-home.svg');
   background-size: contain;
   background-repeat: no-repeat;
   border-radius: 20px;
+  margin: 0px 70px;
   
   -webkit-transform:scaleX(-1);
   -moz-transform:scaleX(-1);
@@ -15,7 +17,10 @@ const Container = styled.div`
   -o-transform:scaleX(-1);
   transform:scaleX(-1);
 
-  background-color: #E7816B;
+  @media ${devices.mobile} {
+    margin: 0px;
+    border-radius: 0px;
+  };
 `
 
 const Wrapper = styled.div`
@@ -35,6 +40,11 @@ const Wrapper = styled.div`
   @media ${devices.tablet} {
     flex-direction: column;
     text-align: center;
+  };
+
+  @media ${devices.mobile} {
+    padding: 70px 20px;
+    margin-top: 0px;
   };
 `
 
@@ -57,6 +67,16 @@ const Left = styled.div`
     text-align: center;
     align-items: center;
   };
+
+  @media ${devices.mobile} {
+    h2 {
+      font-size: 32px;
+    }
+
+    p {
+      font-size: 15px;
+    }
+  }
 `
 
 const Right = styled.div`

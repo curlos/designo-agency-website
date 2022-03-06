@@ -47,6 +47,18 @@ const Container = styled.div`
   @media ${devices.tablet} {
     padding: 40px;
   };
+
+  @media ${devices.mobile} {
+    padding: 80px 20px;
+
+    h2 {
+      font-size: 28px;
+    }
+
+    button {
+      font-size: 15px;
+    }
+  };
 `
 
 const InnerContainer = styled.div`

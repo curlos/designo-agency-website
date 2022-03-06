@@ -4,11 +4,16 @@ import styled from 'styled-components'
 import { devices } from '../styles/media_queries'
 
 const Container = styled.div`
-  padding: 20px 0px;
+  padding: 20px 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 40px;
+
+  @media ${devices.mobile} {
+    padding: 20px;
+    margin-bottom: 0px;
+  };
 `
 
 const Left = styled.div`
@@ -42,6 +47,22 @@ const Right = styled.div`
   }
 `
 
+const MobileRight = styled.div`
+  display: none;
+
+  @media ${devices.mobile} {
+    display: block;
+  };
+`
+
+const DesktopRight = styled.div`
+  display: block;
+
+  @media ${devices.mobile} {
+    display: none;
+  };
+`
+
 const Navbar = () => {
   return (
     <Container>
@@ -51,11 +72,19 @@ const Navbar = () => {
         </Link>
       </Left>
 
-      <Right>
-        <Link href="/about" passHref>OUR COMPANY</Link>
-        <Link href="/locations" passHref>LOCATIONS</Link>
-        <Link href="/contact" passHref>CONTACT</Link>
-      </Right>
+      <MobileRight>
+        <Right>
+          <img src="/assets/shared/mobile/icon-hamburger.svg" alt="hamburger menu" />
+        </Right>
+      </MobileRight>
+
+      <DesktopRight>
+        <Right>
+          <Link href="/about" passHref>OUR COMPANY</Link>
+          <Link href="/locations" passHref>LOCATIONS</Link>
+          <Link href="/contact" passHref>CONTACT</Link>
+        </Right>
+      </DesktopRight>
     </Container>
   )
 }

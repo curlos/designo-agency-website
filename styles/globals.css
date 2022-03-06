@@ -7,6 +7,8 @@ body {
   font-family: Jost, sans-serif;
   font-weight: 400;
   color: #333136;
+  width: 100vw;
+  max-width: 100%;
 }
 
 a {

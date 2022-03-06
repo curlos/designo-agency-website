@@ -26,6 +26,11 @@ const Container = styled.div`
     justify-content: flex-start;
     text-align: start;
   };
+
+  @media ${devices.mobile} {
+    display: block;
+    text-align: center;
+  };
 `
 
 const AdjectiveImage = styled.img`
