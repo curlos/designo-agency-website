@@ -24,6 +24,11 @@ const DesignTypes = styled.div`
   gap: 20px;
   height: 300px;
   margin-bottom: 90px;
+
+  @media ${devices.tablet} {
+    display: flex;
+    flex-direction: column;
+  };
 `
 
 export default function Home() {

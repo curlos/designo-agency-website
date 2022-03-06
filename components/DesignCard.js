@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { devices } from '../styles/media_queries'
 
 const DesignImg = styled.img`
   content:url('/assets/${props => props.designType}/desktop/${props => props.imageFilename}.jpg');
@@ -7,6 +8,12 @@ const DesignImg = styled.img`
   object-fit: cover;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+
+  @media ${devices.tablet} {
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 20px;
+  };
+  
 `
 
 const DesignInfo = styled.div`
@@ -29,6 +36,15 @@ const DesignInfo = styled.div`
   p {
     color: #333136;
   }
+
+  @media ${devices.tablet} {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 0px;
+  };
 `
 
 const Container = styled.div`
@@ -47,6 +63,11 @@ const Container = styled.div`
       }
     }
   }
+
+  @media ${devices.tablet} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  };
 `
 
 
