@@ -1,14 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
+import { devices } from '../styles/media_queries'
 
 const Container = styled.div`
   display: grid;
   grid-template-columns: 3fr 2fr;
   border: none;
   margin-bottom: 90px;
+
+  @media ${devices.tablet} {
+    grid-template-columns: none;
+    grid-template-rows: 1fr 1fr;
+  };
 `
 
-const Left = styled.div`
+const Info = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,9 +24,17 @@ const Left = styled.div`
   padding: 90px;
   color: #FFFFFF;
 
+  @media ${devices.tablet} {
+    text-align: center;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 20px;
+    order: 1;
+    padding: 60px;
+  };
+
 `
 
-const LeftWrapper = styled.div`
+const InfoWrapper = styled.div`
 
   h2 {
     font-size: 48px;
@@ -33,26 +47,32 @@ const LeftWrapper = styled.div`
   }
 `
 
-const Right = styled.img`
+const ImageWrapper = styled.img`
   background-image: url('/assets/about/desktop/image-about-hero.jpg');
   height: 100%;
   width: 100%;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   border: none;
+
+  @media ${devices.tablet} {
+    text-align: center;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 0px;
+  };
 `
 
 const AboutTopInfo = () => {
   return (
     <Container>
-      <Left>
-        <LeftWrapper>
+      <Info>
+        <InfoWrapper>
           <h2>About Us</h2>
           <p>Founded in 2010, we are a creative agency that produces lasting results for our clients. We’ve partnered with many startups, corporations, and nonprofits alike to craft designs that make real impact. We’re always looking forward to creating brands, products, and digital experiences that connect with our clients’ audiences.</p>
-        </LeftWrapper>
-      </Left>
+        </InfoWrapper>
+      </Info>
 
-      <Right />
+      <ImageWrapper />
     </Container>
   )
 }

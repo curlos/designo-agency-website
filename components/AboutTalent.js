@@ -1,14 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
+import { devices } from '../styles/media_queries'
 
 const Container = styled.div`
   display: grid;
   grid-template-columns: 3fr 4fr;
   border: none;
   margin-bottom: 90px;
+
+  @media ${devices.tablet} {
+    grid-template-columns: none;
+    grid-template-rows: 4fr 5fr;
+  };
 `
 
-const Left = styled.img`
+const ImageWrapper = styled.img`
   background-image: url('/assets/about/desktop/image-world-class-talent.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -17,9 +23,15 @@ const Left = styled.img`
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   border: none;
+
+  @media ${devices.tablet} {
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 20px;
+    background-position: 50% 68%;
+  };
 `
 
-const Right = styled.div`
+const Info = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,9 +40,17 @@ const Right = styled.div`
   border-bottom-right-radius: 20px;
   padding: 90px;
   color: #FFFFFF;
+
+  @media ${devices.tablet} {
+    text-align: center;
+    padding: 60px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 0px;
+  };
 `
 
-const RightWrapper = styled.div`
+const InfoWrapper = styled.div`
   height: 100%;
   h2 {
     color: #E7816B;
@@ -50,16 +70,16 @@ const RightWrapper = styled.div`
 const AboutTalent = () => {
   return (
     <Container>
-      <Left />
+      <ImageWrapper />
 
-      <Right>
-        <RightWrapper>
+      <Info>
+        <InfoWrapper>
           <h2>World-class talent</h2>
           <p>We are a crew of strategists, problem-solvers, and technologists. Every design is thoughtfully crafted from concept to launch, ensuring success in its given market. We are constantly updating our skills in a myriad of platforms.</p>
 
           <p>Our team is multi-disciplinary and we are not merely interested in form — content and meaning are just as important. We give great importance to craftsmanship, service, and prompt delivery. Clients have always been impressed with our high-quality outcomes that encapsulates their brand’s story and mission.</p>
-        </RightWrapper>
-      </Right>
+        </InfoWrapper>
+      </Info>
     </Container>
   )
 }

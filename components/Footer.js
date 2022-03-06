@@ -10,6 +10,7 @@ const Container = styled.div`
 
   @media ${devices.tablet} {
     padding: 40px;
+    padding-top: 70px;
   };
 `
 

@@ -1,12 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
 import AboutCountry from './AboutCountry'
+import { devices } from '../styles/media_queries' 
 
 const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
   margin-bottom: 90px;
+
+  @media ${devices.tablet} {
+    grid-template-columns: none;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 70px;
+  };
 `
 
 const AboutCountries = () => {
