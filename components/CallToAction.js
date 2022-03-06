@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { devices } from '../styles/media_queries'
 
 const Container = styled.div`
   border-radius: 20px;
@@ -13,6 +14,13 @@ const Container = styled.div`
   margin-top: 90px;
   margin-bottom: -70px;
   position: relative;
+
+  @media ${devices.tablet} {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+  };
 `
 
 const Left = styled.div`
@@ -22,6 +30,7 @@ const Left = styled.div`
     font-size: 40px;
     font-weight: medium;
     line-height: 40px;
+    margin-bottom: 30px;
   };
 
   p {
@@ -51,6 +60,10 @@ const WhiteButton = styled.button`
     background-color: #FFAD9B;
     color: #FFFFFF;
   }
+
+  @media ${devices.tablet} {
+    align-self: center;
+  };
 `
 
 const CallToAction = () => {

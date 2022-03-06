@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { devices } from '../styles/media_queries'
 
 const Container = styled.div`
   color: #FFFFFF;
@@ -30,9 +31,17 @@ const Wrapper = styled.div`
   -ms-transform:scaleX(-1);
   -o-transform:scaleX(-1);
   transform:scaleX(-1);
+
+  @media ${devices.tablet} {
+    flex-direction: column;
+    text-align: center;
+  };
 `
 
 const Left = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 
   h2 {
     font-size: 48px;
@@ -42,6 +51,11 @@ const Left = styled.div`
   p {
     font-size: 16px;
     font-weight: regular;
+  };
+
+  @media ${devices.tablet} {
+    text-align: center;
+    align-items: center;
   };
 `
 

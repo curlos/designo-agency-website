@@ -7,10 +7,15 @@ import DesignTitle from '../../components/DesignTitle'
 import DesignCards from '../../components/DesignCards'
 import DesignType from '../../components/DesignType'
 import CallToAction from '../../components/CallToAction'
+import { devices } from '../../styles/media_queries'
 
 const Container = styled.main`
   min-height: 100vh;
   padding: 20px 70px;
+
+  @media ${devices.tablet} {
+    padding: 20px 40px;
+  };
 `
 
 const DesignTypes = styled.div`

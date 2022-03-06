@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import DesignType from './DesignType'
+import { devices } from '../styles/media_queries'
 
 const Container = styled.div`
   display: grid;
@@ -8,6 +9,13 @@ const Container = styled.div`
   grid-gap: 20px;
   height: 541px;
   margin: 70px auto;
+
+  @media ${devices.tablet} {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+  };
 `
 
 const Right = styled.div`

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -27,35 +27,58 @@ const Left = styled.div`
   }
 `
 
-const Right = styled.form`
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+const Input = styled.input`
+  width: ${props => !props.empty ? '2%' : 'auto'};
+`
 
-  input, textarea {
-    padding: 10px 20px;
+const Textarea = styled.textarea`
+  font-family: Jost, sans-serif;
+  resize: none;
+  min-height: 100px;
+`
+
+const InputWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  border-bottom: 1px solid #FFFFFF;
+
+  &:focus {
+    outline: none;
+    border-width: 3px;
+  }
+
+  ${Input}, ${Textarea} {
+    padding: 10px 15px;
     border: none;
     background-color: transparent;
-    border-bottom: 1px solid #FFFFFF;
     font-size: 15px;
     font-weight: 500;
     line-height: 26px;
     color: #FFFFFF;
-  }
+    width: 100%;
 
-  input::placeholder, textarea::placeholder {
-    color: rgba(255, 255, 255, 0.5);
-  }
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
 
-  input:focus, textarea:focus {
-    outline: none;
+    &:focus {
+      outline: none;
+    }
   }
+`
 
-  textarea {
-    font-family: Jost, sans-serif;
-    resize: none;
-    min-height: 100px;
-  }
+const EmptyError = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-style: italic;
+`
+
+const Right = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 `
 
 const ButtonWrapper = styled.div`
@@ -81,6 +104,37 @@ const WhiteButton = styled.button`
 `
 
 const ContactForm = () => {
+
+  const [name, setName] = useState({
+    type: 'text',
+    placeholder: 'Name',
+    value: '',
+    change(newVal) {
+      console.log('fag')
+      setName({...name, value: newVal})
+    }
+  },)
+  const [emailAddress, setEmailAddress] = useState({
+    type: 'email',
+    placeholder: 'Email Address',
+    value: '',
+    change(newVal) {
+      setEmailAddress({...emailAddress, value: newVal})
+    }
+  })
+  const [phone, setPhone] = useState({
+    type: 'tel',
+    placeholder: 'Phone',
+    value: '',
+    change(newVal) {
+      setPhone({...phone, value: newVal})
+    }
+  })
+
+  const [message, setMessage] = useState('')
+
+  const INPUTS = [name, emailAddress, phone]
+
   return (
     <Container>
       <Left>
@@ -89,10 +143,25 @@ const ContactForm = () => {
       </Left>
 
       <Right>
-        <input type="text" placeholder="Name"></input>
-        <input type="email" placeholder="Email Address"></input>
-        <input type="tel" placeholder="Phone"></input>
-        <textarea placeholder="Your Message" />
+        {INPUTS.map((inputInfo) => (
+          <InputWrapper>
+            <Input type={inputInfo.text} placeholder={inputInfo.placeholder} empty={inputInfo.value.length < 1} value={inputInfo.value} onChange={(e) => inputInfo.change(e.target.value)}></Input>
+            {inputInfo.value.length < 1 && (
+              <EmptyError>
+                <i>Can't be empty</i>
+                <img src="/assets/contact/desktop/icon-error.svg" alt="error icon" />
+              </EmptyError>
+            )}
+          </InputWrapper>
+        ))}
+      
+        <InputWrapper>
+          <Textarea placeholder="Your Message" />
+          <EmptyError>
+            <i>Can't be empty</i>
+            <img src="/assets/contact/desktop/icon-error.svg" alt="error icon" />
+          </EmptyError>
+        </InputWrapper>
         <ButtonWrapper>
           <WhiteButton>SUBMIT</WhiteButton>
         </ButtonWrapper>

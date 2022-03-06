@@ -1,11 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
 import Adjective from './Adjective'
+import { devices } from '../styles/media_queries'
 
 const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 25px;
+
+  @media ${devices.tablet} {
+    display: flex;
+    flex-direction: column;
+  };
 `
 
 const Adjectives = () => {

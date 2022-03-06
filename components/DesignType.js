@@ -1,10 +1,11 @@
 import React from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
+import { devices } from '../styles/media_queries'
 
 const Container = styled.div`
   height: 100%;
-  padding: 20px;
+  padding: 20px 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,6 +16,7 @@ const Container = styled.div`
   background-size: cover;
   border-radius: 10px;
   cursor: pointer;
+  text-align: center;
 
   &:hover, &:active {
     background-image:
@@ -41,6 +43,10 @@ const Container = styled.div`
     background: none;
     cursor: pointer;
   };
+
+  @media ${devices.tablet} {
+    padding: 40px;
+  };
 `
 
 const InnerContainer = styled.div`
@@ -48,6 +54,7 @@ const InnerContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 15px;
 `
 
 const DesignType = ({ type }) => {

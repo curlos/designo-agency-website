@@ -1,9 +1,10 @@
 import React from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
+import { devices } from '../styles/media_queries'
 
 const Container = styled.div`
-  padding: 20px 40px;
+  padding: 20px 0px;
   display: flex;
   justify-content: space-between;
   align-items: center;

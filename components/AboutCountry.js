@@ -37,6 +37,10 @@ const SeeLocation = styled.button`
   padding: 20px;
   letter-spacing: 1px;
   cursor: pointer;
+
+  &:active {
+    background-color: #FFAD9B;
+  }
 `
 
 const AboutCountry = ({ index, country }) => {
@@ -49,7 +53,7 @@ const AboutCountry = ({ index, country }) => {
         <img src={`/assets/shared/desktop/${country.image}.svg`} alt={country.name} />
       </ImageWrapper>
       <p>{country.name.toUpperCase()}</p>
-      <Link href="/" passHref>
+      <Link href="/locations" passHref>
         <SeeLocation>SEE LOCATION</SeeLocation>
       </Link>
     </Container>

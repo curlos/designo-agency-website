@@ -8,10 +8,15 @@ import CallToAction from '../../components/CallToAction'
 import Footer from '../../components/Footer'
 import AboutTalent from '../../components/AboutTalent'
 import AboutCountries from '../../components/AboutCountries'
+import { devices } from '../../styles/media_queries'
 
 const Container = styled.main`
   min-height: 100vh;
   padding: 20px 70px;
+
+  @media ${devices.tablet} {
+    padding: 20px 40px;
+  };
 `
 
 export default function Home() {

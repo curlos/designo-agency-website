@@ -1,11 +1,16 @@
 import React from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
+import { devices } from '../styles/media_queries'
 
 const Container = styled.div`
   background-color: #1D1C1E;
   padding: 40px 70px;
   padding-top: 70px;
+
+  @media ${devices.tablet} {
+    padding: 40px;
+  };
 `
 
 const TopBar = styled.div`
@@ -35,7 +40,7 @@ const TopRight = styled.div`
       text-decoration: underline;
       text-decoration-thickness: 1px;
     }
-  }
+  };
 `
 
 const BottomBar = styled.div`
@@ -49,7 +54,6 @@ const BottomBar = styled.div`
 
 const Address = styled.div`
 
-  div:
 `
 
 const Contact = styled.div`
