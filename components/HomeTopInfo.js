@@ -5,39 +5,26 @@ import { devices } from '../styles/media_queries'
 const Container = styled.div`
   color: #FFFFFF;
   background-color: #E7816B;
-  background-image: url('/assets/home/desktop/bg-pattern-hero-home.svg');
-  background-size: contain;
+  background-image: url('/assets/home/desktop/bg-pattern-hero-home.svg'), url('/assets/home/desktop/image-hero-phone.png');
   background-repeat: no-repeat;
+  background-position: top right, top right;
   border-radius: 20px;
   margin: 0px 70px;
   margin-top: 80px;
-  
-  -webkit-transform:scaleX(-1);
-  -moz-transform:scaleX(-1);
-  -ms-transform:scaleX(-1);
-  -o-transform:scaleX(-1);
-  transform:scaleX(-1);
+
 
   @media ${devices.mobile} {
     margin: 0px;
     border-radius: 0px;
     margin-top: 65px;
+    background-position: 100% 28%;
   };
 `
 
 const Wrapper = styled.div`
   margin-top: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border-radius: 20px;
-  padding: 50px;
-
-  -webkit-transform:scaleX(-1);
-  -moz-transform:scaleX(-1);
-  -ms-transform:scaleX(-1);
-  -o-transform:scaleX(-1);
-  transform:scaleX(-1);
+  padding: 130px 80px;
 
   @media ${devices.tablet} {
     flex-direction: column;
@@ -52,8 +39,10 @@ const Wrapper = styled.div`
 
 const Left = styled.div`
   display: flex;
+  justify-content: center;
   flex-direction: column;
   gap: 15px;
+  width: 65%;
 
   h2 {
     font-size: 48px;
@@ -71,6 +60,8 @@ const Left = styled.div`
   };
 
   @media ${devices.mobile} {
+    width: 100%;
+
     h2 {
       font-size: 32px;
     }
@@ -97,6 +88,7 @@ const WhiteButton = styled.button`
   padding: 20px 25px;
   border-radius: 10px;
   letter-spacing: 1px;
+  align-self: flex-start;
 
   cursor: pointer;
 
@@ -104,6 +96,10 @@ const WhiteButton = styled.button`
     background-color: #FFAD9B;
     color: #FFFFFF;
   }
+
+  @media ${devices.mobile} {
+    align-self: center;
+  };
 `
 
 const HomeTopInfo = () => {
@@ -117,10 +113,6 @@ const HomeTopInfo = () => {
 
           <WhiteButton>LEARN MORE</WhiteButton>
         </Left>
-
-        <Right>
-          <img src="/assets/home/desktop/image-hero-phone.png" alt="" />
-        </Right>
       </Wrapper>
     </Container>
   )
