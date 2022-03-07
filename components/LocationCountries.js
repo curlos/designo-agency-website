@@ -8,9 +8,14 @@ const Container = styled.div`
   flex-direction: column;
   gap: 20px;
   margin-bottom: 130px;
+  margin-top: 80px;
 
   @media ${devices.tablet} {
     gap: 90px;
+  };
+
+  @media ${devices.mobile} {
+    margin-top: 65px;
   };
 `
 

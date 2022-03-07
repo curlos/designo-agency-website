@@ -7,15 +7,6 @@ import CallToAction from '../../components/CallToAction'
 import Footer from '../../components/Footer'
 import { devices } from '../../styles/media_queries'
 
-const Container = styled.main`
-  min-height: 100vh;
-  padding: 20px 70px;
-
-  @media ${devices.tablet} {
-    padding: 20px 40px;
-  };
-`
-
 export default function Location() {
   return (
     <div>
@@ -27,11 +18,7 @@ export default function Location() {
       </Head>
 
       <Navbar />
-    
-      <Container>
-        <LocationCountries />
-      </Container>
-
+      <LocationCountries />
       <CallToAction />
       <Footer />
     </div>

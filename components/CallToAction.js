@@ -14,6 +14,8 @@ const Container = styled.div`
   margin-top: 90px;
   margin-bottom: -70px;
   position: relative;
+  margin-left: 70px;
+  margin-right: 70px;
 
   @media ${devices.tablet} {
     flex-direction: column;

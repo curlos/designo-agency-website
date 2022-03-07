@@ -12,6 +12,10 @@ const Container = styled.div`
     grid-template-rows: 1fr 1fr;
     gap: 30px;
   };
+
+  @media ${devices.mobile} {
+    gap: 0px;
+  };
 `
 
 const CountryInfo = styled.div`
@@ -31,6 +35,12 @@ const CountryInfo = styled.div`
   @media ${devices.tablet} {
     padding: 60px;
   };
+
+  @media ${devices.mobile} {
+    border-radius: 0px;
+    text-align: center;
+    padding: 60px 40px;
+  };
 `
 
 const MapImage = styled.div`
@@ -43,11 +53,20 @@ const MapImage = styled.div`
   @media ${devices.tablet} {
     order: -1;
   };
+
+  @media ${devices.mobile} {
+    border-radius: 0px;
+  };
 `
 
 const AddressContact = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
+
+  @media ${devices.mobile} {
+    display: flex;
+    flex-direction: column;
+  };
 `
 
 const LocationCountry = ({ index, country }) => {
