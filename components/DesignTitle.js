@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { devices } from '../styles/media_queries'
 
 const Container = styled.div`
   display: flex;
@@ -10,6 +11,11 @@ const Container = styled.div`
   border-radius: 20px;
   color: #FFFFFF;
   margin-bottom: 90px;
+
+  @media ${devices.mobile} {
+    border-radius: 0px;
+    padding: 40px 20px;
+  };
 `
 
 const Wrapper = styled.div`
@@ -27,6 +33,18 @@ const Wrapper = styled.div`
     font-weight: 400;
     line-height: 26px;
   }
+
+  @media ${devices.mobile} {
+    width: 100%;
+
+    h2 {
+      font-size: 32px;
+    }
+
+    p {
+      font-size: 15px;
+    }
+  };
 `
 
 const DesignTitle = ({ type }) => {

@@ -20,6 +20,7 @@ const Container = styled.div`
   @media ${devices.mobile} {
     margin: 0px;
     border-radius: 0px;
+    margin-top: 65px;
   };
 `
 

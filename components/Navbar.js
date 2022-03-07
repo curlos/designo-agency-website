@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
 import { devices } from '../styles/media_queries'
@@ -9,10 +9,13 @@ const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 40px;
+  background-color: #FFFFFF;
+  height: 65px;
 
   @media ${devices.mobile} {
     padding: 20px;
     margin-bottom: 0px;
+
   };
 `
 
@@ -26,13 +29,13 @@ const Left = styled.div`
   };
 `
 
-const Right = styled.div`
+const RouteLinks = styled.div`
   display: flex;
   align-items: center;
   gap: 35px;
   
   a {
-    font-weight: normal;
+    font-weight: 400;
     font-size: 14px;
     letter-spacing: 2px;
     cursor: pointer;
@@ -45,6 +48,16 @@ const Right = styled.div`
       text-decoration-color: 
     }
   }
+
+  @media ${devices.mobile} {
+    flex-direction: column;
+    align-items: flex-start;
+
+    a {
+      font-size: 24px;
+      line-height: 25px;
+    }
+  };
 `
 
 const MobileRight = styled.div`
@@ -63,29 +76,82 @@ const DesktopRight = styled.div`
   };
 `
 
+const Dropdown = styled.div`
+  position: relative;
+  display: none;
+
+  @media ${devices.mobile} {
+    display: block;
+  };
+`
+
+const DropdownContent = styled.div`
+  display: none;
+  position: absolute;
+  background-color: #1D1C1E;
+  color: #FFFFFF;
+  width: 100%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 40px 20px;
+  z-index: 1;
+
+  @media ${devices.mobile} {
+    display: block;
+  };
+`
+
+const ContainerWrapper = styled.div`
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  
+  @media ${devices.mobile} {
+    height: 100%;
+    background-color: ${props => props.open ? 'rgb(0,0,0)' : 'transparent'};
+    background-color: ${props => props.open ? 'rgba(0,0,0, 0.4)' : 'transparent'};
+  };
+`
+
 const Navbar = () => {
+  const [open, setOpen] = useState(false)
+
+
   return (
-    <Container>
-      <Left>
-        <Link href="/" passHref>
-          <img src="/assets/shared/desktop/logo-dark.png" alt=""  />
-        </Link>
-      </Left>
+    <ContainerWrapper open={open}>
+      <Container>
+        <Left>
+          <Link href="/" passHref>
+            <img src="/assets/shared/desktop/logo-dark.png" alt=""  />
+          </Link>
+        </Left>
 
-      <MobileRight>
-        <Right>
-          <img src="/assets/shared/mobile/icon-hamburger.svg" alt="hamburger menu" />
-        </Right>
-      </MobileRight>
+        <Dropdown onClick={() => setOpen(!open)}>
+          <RouteLinks>
+            <img src={`/assets/shared/mobile/${!open ? 'icon-hamburger.svg' : 'icon-close.svg'}`} alt="hamburger menu" />
+          </RouteLinks>
+        </Dropdown>
 
-      <DesktopRight>
-        <Right>
-          <Link href="/about" passHref>OUR COMPANY</Link>
-          <Link href="/locations" passHref>LOCATIONS</Link>
-          <Link href="/contact" passHref>CONTACT</Link>
-        </Right>
-      </DesktopRight>
-    </Container>
+        <DesktopRight>
+          <RouteLinks>
+            <Link href="/about" passHref>OUR COMPANY</Link>
+            <Link href="/locations" passHref>LOCATIONS</Link>
+            <Link href="/contact" passHref>CONTACT</Link>
+          </RouteLinks>
+        </DesktopRight>
+      </Container>
+
+
+      {open && (
+        <DropdownContent>
+          <RouteLinks>
+            <Link href="/about" passHref>OUR COMPANY</Link>
+            <Link href="/locations" passHref>LOCATIONS</Link>
+            <Link href="/contact" passHref>CONTACT</Link>
+          </RouteLinks>
+        </DropdownContent>
+      )}
+    </ContainerWrapper>
   )
 }
 

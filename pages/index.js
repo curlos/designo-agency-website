@@ -23,6 +23,11 @@ const Container = styled.main`
   };
 `
 
+const MarginOffset = styled.div`
+  height: 65px;
+  width: 100%;
+`
+
 export default function Home() {
   return (
     <div>

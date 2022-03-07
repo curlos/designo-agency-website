@@ -74,10 +74,11 @@ export default function Home() {
         <meta name="viewport" content="initial-scale=1.0, width=device-width"></meta>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <Navbar />
+      <DesignTitle />
     
       <Container>
-        <Navbar />
-        <DesignTitle />
         <DesignCards designType="web-design" designs={WEB_DESIGNS} />
         
         <DesignTypes>
