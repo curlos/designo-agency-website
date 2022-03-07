@@ -10,6 +10,7 @@ const Container = styled.div`
   background-repeat: no-repeat;
   border-radius: 20px;
   margin: 0px 70px;
+  margin-top: 80px;
   
   -webkit-transform:scaleX(-1);
   -moz-transform:scaleX(-1);

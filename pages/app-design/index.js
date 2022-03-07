@@ -16,6 +16,10 @@ const Container = styled.main`
   @media ${devices.tablet} {
     padding: 20px 40px;
   };
+
+  @media ${devices.mobile} {
+    padding: 20px;
+  };
 `
 
 const DesignTypes = styled.div`
@@ -69,19 +73,20 @@ export default function AppDesign() {
         <meta name="viewport" content="initial-scale=1.0, width=device-width"></meta>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <Navbar />
+      <DesignTitle type="app-design"/>
     
       <Container>
-        <Navbar />
-        <DesignTitle type="app-design"/>
         <DesignCards designType="app-design" designs={APP_DESIGNS} />
         
         <DesignTypes>
           <DesignType type="WEB DESIGN" />
           <DesignType type="GRAPHIC DESIGN" />
         </DesignTypes>
-
-        <CallToAction />
       </Container>
+
+      <CallToAction />
 
       <Footer />
     </div>

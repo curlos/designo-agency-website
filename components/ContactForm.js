@@ -11,12 +11,24 @@ const Container = styled.div`
   border-radius: 20px;
   color: #FFFFFF;
   margin-bottom: 130px;
+  margin-top: 80px;
+  margin-left: 40px;
+  margin-right: 40px;
 
   @media ${devices.tablet} {
     display: flex;
     flex-direction: column;
     gap: 20px;
     padding: 60px 50px;
+  };
+
+  @media ${devices.mobile} {
+    margin: 0;
+    margin-bottom: 80px;
+    margin-top: 65px;
+    border-radius: 0px;
+    text-align: center;
+    padding: 50px 25spx; 
   };
 `
 
@@ -92,6 +104,11 @@ const Inputs = styled.form`
 
 const ButtonWrapper = styled.div`
   text-align: right;
+
+  @media ${devices.mobile} {
+    margin-top: 20px;
+    text-align: center;
+  };
 `
 
 const WhiteButton = styled.button`

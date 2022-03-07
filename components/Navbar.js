@@ -107,7 +107,7 @@ const ContainerWrapper = styled.div`
   width: 100%;
   
   @media ${devices.mobile} {
-    height: 100%;
+    height: ${props => props.open ? '100%' : 'auto'};
     background-color: ${props => props.open ? 'rgb(0,0,0)' : 'transparent'};
     background-color: ${props => props.open ? 'rgba(0,0,0, 0.4)' : 'transparent'};
   };
@@ -118,8 +118,8 @@ const Navbar = () => {
 
 
   return (
-    <ContainerWrapper open={open}>
-      <Container>
+    <ContainerWrapper open={open} onClick={() => open ? setOpen(false) : null}>
+      <Container onClick={(e) => e.stopPropagation()}>
         <Left>
           <Link href="/" passHref>
             <img src="/assets/shared/desktop/logo-dark.png" alt=""  />
@@ -143,7 +143,7 @@ const Navbar = () => {
 
 
       {open && (
-        <DropdownContent>
+        <DropdownContent onClick={(e) => e.stopPropagation()}>
           <RouteLinks>
             <Link href="/about" passHref>OUR COMPANY</Link>
             <Link href="/locations" passHref>LOCATIONS</Link>

@@ -8,7 +8,7 @@ const Container = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
   height: 541px;
-  margin: 70px auto;
+  margin: 70px 0px;
 
   @media ${devices.tablet} {
     display: flex;

@@ -16,6 +16,10 @@ const Container = styled.main`
   @media ${devices.tablet} {
     padding: 20px 40px;
   };
+
+  @media ${devices.mobile} {
+    padding: 20px;
+  };
 `
 
 const DesignTypes = styled.div`
@@ -85,10 +89,9 @@ export default function Home() {
           <DesignType type="APP DESIGN" />
           <DesignType type="GRAPHIC DESIGN" />
         </DesignTypes>
-
-        <CallToAction />
       </Container>
 
+      <CallToAction />
       <Footer />
     </div>
   )

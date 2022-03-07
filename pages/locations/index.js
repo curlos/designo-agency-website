@@ -25,13 +25,14 @@ export default function Location() {
         <meta name="viewport" content="initial-scale=1.0, width=device-width"></meta>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <Navbar />
     
       <Container>
-        <Navbar />
         <LocationCountries />
-        <CallToAction />
       </Container>
 
+      <CallToAction />
       <Footer />
     </div>
   )

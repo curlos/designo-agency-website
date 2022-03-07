@@ -11,10 +11,12 @@ const Container = styled.div`
   border-radius: 20px;
   color: #FFFFFF;
   margin-bottom: 90px;
+  margin-top: 80px;
 
   @media ${devices.mobile} {
     border-radius: 0px;
     padding: 40px 20px;
+    margin-top: 65px;
   };
 `
 

@@ -44,9 +44,9 @@ export default function Home() {
       <Container>
         <DesignTypes />
         <Adjectives />
-        <CallToAction />
       </Container>
 
+      <CallToAction />
       <Footer />
     </div>
   )

@@ -29,6 +29,10 @@ const ImageWrapper = styled.img`
     border-top-right-radius: 20px;
     background-position: 50% 68%;
   };
+
+  @media ${devices.mobile} {
+    border-radius: 0px;
+  };
 `
 
 const Info = styled.div`
@@ -47,6 +51,11 @@ const Info = styled.div`
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
     border-top-right-radius: 0px;
+  };
+
+  @media ${devices.mobile} {
+    border-radius: 0px;
+    padding: 60px 30px;
   };
 `
 

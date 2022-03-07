@@ -16,6 +16,10 @@ const Container = styled.main`
   @media ${devices.tablet} {
     padding: 20px 40px;
   };
+
+  @media ${devices.mobile} {
+    padding: 20px;
+  };
 `
 
 const DesignTypes = styled.div`
@@ -59,20 +63,20 @@ export default function GraphicDesign() {
         <meta name="viewport" content="initial-scale=1.0, width=device-width"></meta>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <Navbar />
+      <DesignTitle type="graphic-design"/>
     
       <Container>
-        <Navbar />
-        <DesignTitle type="graphic-design"/>
         <DesignCards designType="graphic-design" designs={GRAPHIC_DESIGNS} />
         
         <DesignTypes>
           <DesignType type="WEB DESIGN" />
           <DesignType type="APP DESIGN" />
         </DesignTypes>
-
-        <CallToAction />
       </Container>
 
+      <CallToAction />
       <Footer />
     </div>
   )

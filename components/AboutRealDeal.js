@@ -31,6 +31,11 @@ const Info = styled.div`
     text-align: center;
     padding: 60px;
   }
+
+  @media ${devices.mobile} {
+    border-radius: 0px;
+    padding: 60px 30px;
+  };
 `
 
 const InfoWrapper = styled.div`
@@ -63,6 +68,10 @@ const ImageWrapper = styled.img`
     order: -1;
     border-bottom-right-radius: 0px;
     border-top-left-radius: 20px;
+  };
+
+  @media ${devices.mobile} {
+    border-radius: 0px;
   };
 `
 

@@ -27,9 +27,10 @@ export default function ContactPage () {
         <link rel="icon" href="/favicon.ico" />
       </Head>
     
+      <Navbar />
+      <ContactForm />
+      
       <Container>
-        <Navbar />
-        <ContactForm />
         <AboutCountries />
       </Container>
 

@@ -17,6 +17,10 @@ const Container = styled.main`
   @media ${devices.tablet} {
     padding: 20px 40px;
   };
+
+  @media ${devices.mobile} {
+    padding: 0px;
+  };
 `
 
 export default function Home() {
@@ -28,17 +32,18 @@ export default function Home() {
         <meta name="viewport" content="initial-scale=1.0, width=device-width"></meta>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <Navbar />
+      <AboutTopInfo />
     
       <Container>
-        <Navbar />
-        <AboutTopInfo />
+        
         <AboutTalent />
         <AboutCountries />
         <AboutRealDeal />
-        
-        <CallToAction />
       </Container>
 
+      <CallToAction />
       <Footer />
     </div>
   )

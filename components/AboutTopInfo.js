@@ -7,10 +7,18 @@ const Container = styled.div`
   grid-template-columns: 3fr 2fr;
   border: none;
   margin-bottom: 90px;
+  margin-top: 80px;
+  padding: 40px;
 
   @media ${devices.tablet} {
     grid-template-columns: none;
     grid-template-rows: 1fr 1fr;
+  };
+
+  @media ${devices.mobile} {
+    padding: 0px;
+    margin-top: 65px;
+    margin-bottom: 0px;
   };
 `
 
@@ -30,6 +38,11 @@ const Info = styled.div`
     border-bottom-right-radius: 20px;
     order: 1;
     padding: 60px;
+  };
+
+  @media ${devices.mobile} {
+    border-radius: 0px;
+    padding: 60px 30px;
   };
 
 `
@@ -61,6 +74,10 @@ const ImageWrapper = styled.img`
     text-align: center;
     border-top-left-radius: 20px;
     border-bottom-right-radius: 0px;
+  };
+
+  @media ${devices.mobile} {
+    border-radius: 0px;
   };
 `
 

@@ -20,10 +20,14 @@ const Container = styled.div`
     justify-content: center;
     text-align: center;
     gap: 20px;
+    margin-top: 170px;
   };
 
   @media ${devices.mobile} {
     padding: 60px 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 180px;
   };
 `
 

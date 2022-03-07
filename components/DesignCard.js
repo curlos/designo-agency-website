@@ -13,6 +13,10 @@ const DesignImg = styled.img`
     border-top-right-radius: 0px;
     border-bottom-left-radius: 20px;
   };
+
+  @media ${devices.mobile} {
+
+  };
   
 `
 
@@ -67,6 +71,21 @@ const Container = styled.div`
   @media ${devices.tablet} {
     display: grid;
     grid-template-columns: 1fr 1fr;
+  };
+
+  @media ${devices.mobile} {
+    display: flex;
+
+    ${DesignImg} {
+      border-bottom-left-radius: 0px;
+      border-top-right-radius: 20px;
+    };
+
+    ${DesignInfo} {
+      border-top-right-radius: 0px;
+      border-bottom-left-radius: 20px;
+      padding: 30px 20px;
+    };
   };
 `
 
