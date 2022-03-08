@@ -12,10 +12,13 @@ const Container = styled.div`
   background-color: #FFFFFF;
   height: 65px;
 
+  @media ${devices.tablet} {
+    padding: 20px;
+  };
+
   @media ${devices.mobile} {
     padding: 20px;
     margin-bottom: 0px;
-
   };
 `
 

@@ -11,13 +11,22 @@ const Container = styled.div`
   border-radius: 20px;
   margin: 0px 70px;
   margin-top: 80px;
+  flex: 1;
+  height: 100%;
+
+  @media ${devices.tablet} {
+    margin-left: 40px;
+    margin-right: 40px;
+    background-position: 250% 110%, 50% 1300%;
+  }
 
 
   @media ${devices.mobile} {
     margin: 0px;
     border-radius: 0px;
     margin-top: 65px;
-    background-position: 100% 28%;
+    padding-bottom: 120px;
+    background-position: 0% 100%, 50% -170%;
   };
 `
 
@@ -25,10 +34,14 @@ const Wrapper = styled.div`
   margin-top: 40px;
   border-radius: 20px;
   padding: 130px 80px;
+  height: 100%;
 
   @media ${devices.tablet} {
     flex-direction: column;
     text-align: center;
+    padding: 50px 60px;
+    margin-top: 0px;
+    
   };
 
   @media ${devices.mobile} {
@@ -47,6 +60,7 @@ const Left = styled.div`
   h2 {
     font-size: 48px;
     font-weight: 500;
+    line-height: 48px;
   };
 
   p {
@@ -57,6 +71,9 @@ const Left = styled.div`
   @media ${devices.tablet} {
     text-align: center;
     align-items: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 60px;
   };
 
   @media ${devices.mobile} {
@@ -69,13 +86,6 @@ const Left = styled.div`
     p {
       font-size: 15px;
     }
-  }
-`
-
-const Right = styled.div`
-
-  img {
-    width: 100%;
   }
 `
 
@@ -97,7 +107,7 @@ const WhiteButton = styled.button`
     color: #FFFFFF;
   }
 
-  @media ${devices.mobile} {
+  @media ${devices.tablet} {
     align-self: center;
   };
 `

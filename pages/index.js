@@ -23,9 +23,10 @@ const Container = styled.main`
   };
 `
 
-const MarginOffset = styled.div`
-  height: 65px;
-  width: 100%;
+const Wrapper = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 `
 
 export default function Home() {
@@ -38,8 +39,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Navbar />
-      <HomeTopInfo />
+      <Wrapper>
+        <Navbar />
+        <HomeTopInfo />
+      </Wrapper>
     
       <Container>
         <DesignTypes />

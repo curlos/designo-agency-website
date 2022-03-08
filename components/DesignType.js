@@ -46,6 +46,16 @@ const Container = styled.div`
 
   @media ${devices.tablet} {
     padding: 40px;
+
+    background-image:
+      linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url('${props => props.mobileBgImage ? props.mobileBgImage :props.bgImage}');
+
+    &:hover, &:active {
+      background-image:
+        linear-gradient(0deg, rgba(231,129,107, 0.6), rgba(231,129,107, 0.6)),
+        url('${props => props.mobileBgImage ? props.mobileBgImage :props.bgImage}');
+    }
   };
 
   @media ${devices.mobile} {
@@ -76,7 +86,9 @@ const DesignType = ({ type }) => {
       case 'WEB DESIGN':
         return {
           name: 'WEB DESIGN',
-          bgImage: '/assets/home/desktop/image-web-design-small.jpg',
+          bgImage: '/assets/home/desktop/image-web-design-large.jpg',
+          mobileBgImage: '/assets/home/desktop/image-web-design-small.jpg',
+
           routerLink: '/web-design'
         }
       case 'APP DESIGN':
@@ -100,11 +112,11 @@ const DesignType = ({ type }) => {
     }
   }
 
-  const { name, bgImage, routerLink } = getDesignTypeInfo(type)
+  const { name, bgImage, mobileBgImage, routerLink } = getDesignTypeInfo(type)
 
   return (
     <Link href={`${routerLink}`} passHref>
-      <Container bgImage={bgImage}>
+      <Container bgImage={bgImage} mobileBgImage={mobileBgImage}>
         <InnerContainer>
           <h2>{name}</h2>
           <button>

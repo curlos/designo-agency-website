@@ -7,15 +7,34 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #E7816B;
-  padding: 40px;
+  padding: 60px 40px;
   border-radius: 20px;
   color: #FFFFFF;
   margin-bottom: 90px;
   margin-top: 80px;
+  background-image: url('/assets/shared/tablet/bg-pattern-design-pages-intro-tablet.svg');
+  background-repeat: no-repeat;
+  background-position: right center;
+  margin-left: 40px;
+  margin-right: 40px;
+
+
+  background-image: url('/assets/graphic-design/desktop/bg-pattern-intro-graphic.svg');
+  background-position: center center;
+
+  -webkit-transform:scaleY(-1);
+  -moz-transform:scaleY(-1);
+  -ms-transform:scaleY(-1);
+  -o-transform:scaleY(-1);
+  transform:scaleY(-1);
+
+
+  
 
   @media ${devices.mobile} {
     border-radius: 0px;
     padding: 40px 20px;
+    margin: 0;
     margin-top: 65px;
   };
 `
@@ -35,6 +54,13 @@ const Wrapper = styled.div`
     font-weight: 400;
     line-height: 26px;
   }
+
+  -webkit-transform:scaleY(-1);
+  -moz-transform:scaleY(-1);
+  -ms-transform:scaleY(-1);
+  -o-transform:scaleY(-1);
+  transform:scaleY(-1);
+
 
   @media ${devices.mobile} {
     width: 100%;

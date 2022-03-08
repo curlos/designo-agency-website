@@ -5,7 +5,9 @@ import { devices } from '../styles/media_queries'
 const Container = styled.div`
   border-radius: 20px;
   background-color: #E7816B;
-  background-image: url('/assets/shared/desktop/bg-pattern-three-circles.svg');
+  background-image: url('/assets/shared/desktop/bg-pattern-call-to-action.svg');
+  background-size: cover;
+  background-position: right center;
   padding: 60px 80px;
   color: #FFFFFF;
   display: flex;
@@ -23,6 +25,8 @@ const Container = styled.div`
     text-align: center;
     gap: 20px;
     margin-top: 170px;
+    margin-left: 40px;
+    margin-right: 40px;
   };
 
   @media ${devices.mobile} {
